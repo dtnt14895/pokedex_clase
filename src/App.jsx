@@ -5,7 +5,11 @@ import usePokemon from "./services/usePokemon";
 
 function App() {
   const { data, filtered, handleClick, handleSubmit, handleOnChange } = usePokemon();
-
+function speech(text){
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang="es"
+  speechSynthesis.speak(utterance)
+}
   return (
     <main>
       <Nav
@@ -14,7 +18,9 @@ function App() {
         fnOnChange={handleOnChange}
         dataOptions={filtered}
       />
-      {data && <Card data={data} />}
+      <div className="contenedor">
+      {data && <Card data={data} speech={speech}/>}
+      </div>
     </main>
   );
 }

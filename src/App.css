@@ -9,3 +9,15 @@
 main {
   min-height: 100vh;
 }
+body{
+  background-color: rgb(56, 191, 253);
+  display: flex;
+  justify-content: center;
+}
+.contenedor{
+  background-color: aliceblue;
+  width: 23rem;
+  margin-bottom: 60px;
+  padding-bottom: 42px;
+  border-radius: 12px;
+}

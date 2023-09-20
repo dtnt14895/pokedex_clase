@@ -1,27 +1,23 @@
 import "./Card.css";
 
-function Card({ data }) {
+function Card({ data, speech }) {
+  const cardData = `Pókemon, ${data.name}, número: ${data.id}, altura: ${data.height}, peso: ${data.weight}, experiencia base: ${data.base_experience}`;
+  speech(cardData)
   return (
     <section>
-      <div>
+<div className={`imgs ${data.types[0].type.name}`}>
         <img src={data.sprites?.other.home.front_default} alt={data.name} />
       </div>
-      <table>
+      <div className="name"><p>{data.name}</p></div>
+      <table className="tabla">
         <thead>
-          <tr>
-            <th>Propiedad</th>
-            <th>Valor</th>
-          </tr>
         </thead>
         <tbody>
           <tr>
-            <td>ID</td>
+            <td>Nro.</td>
             <td>{data.id}</td>
           </tr>
-          <tr>
-            <td>Nombre</td>
-            <td>{data.name}</td>
-          </tr>
+ 
           <tr>
             <td>Altura</td>
             <td>{data.height}</td>
